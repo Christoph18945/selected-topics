@@ -13,6 +13,7 @@ from vector_2d import Vector2D
 
 def main() -> None:
     """main function"""
+    """"""
     test_addition()
     return None
 
