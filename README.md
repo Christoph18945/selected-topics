@@ -18,7 +18,7 @@ pip3 install -r requirements.txt
 ### Example usage
 
 ```bash
-py -3.10 
+py -3.10 timing.py
 ```
 
 ## :books: Useful resources
