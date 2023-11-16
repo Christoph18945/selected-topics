@@ -7,7 +7,7 @@ This project deals with various Python topics that the author considered worth m
 * [Python 3.10](https://www.python.org/)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
-## :pencil2: Geting started
+## :runner: Geting started
 
 ### Prerequisites
 
@@ -28,6 +28,6 @@ py -3.10
 * [Awesome template](http://github.com/Human-Activity-Recognition/blob/main/README.md)
 * [.gitignore file](https://git-scm.com/docs/gitignore)
 
-## :: License
+## :bookmark: License
 
 MIT License :copyright: 2023 Christoph Hartleb
