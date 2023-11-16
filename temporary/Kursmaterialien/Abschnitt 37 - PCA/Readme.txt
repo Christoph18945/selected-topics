@@ -1,1 +1,0 @@
-https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones/data

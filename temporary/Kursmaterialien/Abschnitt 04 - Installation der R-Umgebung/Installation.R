@@ -1,2 +1,0 @@
-packages <- c("stringr", "imager", "DMwR", "GGally", "R.utils", "RColorBrewer", "rgl", "car", "kernlab", "randomForest", "ROCR", "e1071", "tm", "naivebayes", "tidyr", "rpart", "rpart.plot", "nnet", "miscTools", "ggplot2", "scales", "data.table")
-install.packages(packages)
