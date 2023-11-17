@@ -32,7 +32,7 @@ def debug(param_func):
         function: Return debugger function.
     """
     @wraps(param_func)
-    def debugger(*args, **kwargs) -> None:
+    def debugger(*args, **kwargs) -> object:
         """Debugger itself.
 
         Args:
@@ -62,7 +62,6 @@ def calculate_sum(val_a: int, val_b: int, res_c: int = None) -> int:
         int: Return the result.
     """
     res = val_a + val_b if res_c else 0
-    
     return res
 
 if __name__ == "__main__":

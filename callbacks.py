@@ -12,15 +12,15 @@ def main() -> None:
 
 class Callbacks:
     """Callbacks class"""
-
-    def __init__(self):
-        """"""
+    def __init__(self) -> None:
+        """constructor"""
+        return None
 
     def called(self,n: int) -> int:
         """called function"""
         return n[0]*n[1]
 
-    def caller(self, func: object, n: object):
+    def caller(self, func: object, n: object) -> object:
         """caller function"""
         return func(n)
 
