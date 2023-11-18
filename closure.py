@@ -41,6 +41,7 @@ def outer_function(msg) -> None:
         Returns:
             None: Print results.
         """
+        # access variable in outer_function
         print("Inner: '" + outer_msg + "'")
         print("Current time: ", current_time)
     

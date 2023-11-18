@@ -29,10 +29,9 @@ from abc import ABC, abstractmethod
 
 def main() -> None:
     """main function"""
-    # create Receiver object
-    receiver = Receiver()
-    cmd = CommandImplementation(receiver)
-    invoker = Invoker()
+    receiver: Receiver = Receiver()
+    cmd: CommandImplementation = CommandImplementation(receiver)
+    invoker: Invoker = Invoker()
     invoker.command(cmd)
     invoker.execute()
     return None
@@ -57,16 +56,20 @@ class CommandImplementation(Command):
     def process(self):
         self.receiver.perform_action()
   
-"""Class dedicated to Receiver"""
 class Receiver:
-    """perform-action method"""
+    """Class dedicated to Receiver"""
+    def __init__(self):
+        """class constructor"""
+        pass
+
     def perform_action(self):
+        """perform-action method"""
         print('Action performed in receiver.')
-  
-"""Class dedicated to Invoker"""
+
 class Invoker:
-    """command method"""
+    """Class dedicated to Invoker"""
     def command(self, cmd):
+        """command method"""
         self.cmd = cmd
   
     """execute method"""

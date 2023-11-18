@@ -3,7 +3,6 @@
 
 class Memory:
     """class represents memory locations of variables"""
-
     def __init__(self) -> None:
         """initialize class"""
         pass

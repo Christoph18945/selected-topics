@@ -3,7 +3,7 @@
 
 """Flyweight Method
 
-It is a Structural Design Pattern that focus on minimizing the number of objects that are required by the program at the run-time.
+It is a Structural Design Pattern that focuses on minimizing the number of objects that are required by the program at the run-time.
 Basically, it creates a Flyweight object which is shared by multiple contexts. It is created in such a fashion that you can not
 distinguish between an object and a Flyweight Object. One important feature of flyweight objects is that they are immutable.
 This means that they cannot be modified once they have been constructed.
@@ -61,7 +61,12 @@ def main() -> None:
     return None
 
 # Solution using Flyweight Method
-# so, what will you do as a developer to improve the performance? (of course! not going to upgrade the RAM).The actual problem is related to car objects because each car is represented by separate objects containing plenty of data related to its color, size, seats, maximum speed, etc. Whenever your RAM got filled and unable to add more new objects which are required currently, your game gets crashed. For avoiding such situations in applications, it is the prior duty of the developer to use Flyweight Method which allows you to fit more objects into the available amount of RAM by sharing common parts of the objects.
+# so, what will you do as a developer to improve the performance? (of course! not going to upgrade the RAM).
+# The actual problem is related to car objects because each car is represented by separate objects containing
+# plenty of data related to its color, size, seats, maximum speed, etc. Whenever your RAM got filled and unable
+# to add more new objects which are required currently, your game gets crashed. For avoiding such situations
+# in applications, it is the prior duty of the developer to use Flyweight Method which allows you to fit more
+# objects into the available amount of RAM by sharing common parts of the objects.
  
 class ComplexCars(object):
     """Separate class for Complex Cars"""

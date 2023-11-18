@@ -41,30 +41,32 @@ Air Traffic Controller: Air traffic controller is a great example of a mediator 
 
 def main():
     """main function"""
-    mayank = User('Mayank')   # user object
-    lakshya = User('Lakshya') # user object
-    krishna = User('Krishna') # user object
- 
-    mayank.sendCourse("Data Structures and Algorithms")
-    lakshya.sendCourse("Software Development Engineer")
-    krishna.sendCourse("Standard Template Library")
+    mayank: User = User('Mayank') # user object
+    lakshya: User = User('Lakshya') # user object
+    krishna: User = User('Krishna') # user object
+    mayank.send_course("Data Structures and Algorithms")
+    lakshya.send_course("Software Development Engineer")
+    krishna.send_course("Standard Template Library")
     return None
 
 class Course(object):
     """Mediator class."""
-    def displayCourse(self, user, course_name):
+    def display_course(self, user, course_name):
         print("[{}'s course ]: {}".format(user, course_name))
 
 class User(object):
     """A class whose instances want to interact with each other."""
-    def __init__(self, name):
-        self.name = name
-        self.course = Course()
- 
-    def sendCourse(self, course_name):
-        self.course.displayCourse(self, course_name)
- 
-    def __str__(self):
+    def __init__(self, name: str):
+        self.name: str = name
+        self.course: Course = Course()
+
+    def send_course(self, course_name: str) -> None:
+        """display course data"""
+        self.course.display_course(self, course_name)
+        return None
+
+    def __str__(self) -> str:
+        """human-readable string"""
         return self.name
 
 if __name__ == "__main__":

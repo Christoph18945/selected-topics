@@ -78,12 +78,12 @@ class Courses_At_GFG:
  
     def __str__(self):
         return self.__class__.__name__
- 
+
 # Concrete Courses_At_GFG class: Classes being visited.
 class SDE(Courses_At_GFG): pass
 class STL(Courses_At_GFG): pass
 class DSA(Courses_At_GFG): pass
- 
+
 # Abstract Visitor class for Concrete Visitor classes:
 # method defined in this class will be inherited by all
 # Concrete Visitor classes.
@@ -91,8 +91,7 @@ class Visitor:
     """Visitor class"""
     def __str__(self):
         return self.__class__.__name__
- 
- 
+
 # Concrete Visitors: Classes visiting Concrete Course objects.
 # These classes have a visit() method which is called by the
 # accept() method of the Concrete Course_At_GFG classes."""

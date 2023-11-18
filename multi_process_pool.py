@@ -19,23 +19,26 @@ def main() -> None:
     """driver code"""
     NUM_PROCESSES: int = 4
     start_time: float = time.perf_counter()
+    print(start_time)
     clc2: Calculations = Calculations()
     with Pool(processes=NUM_PROCESSES) as pool:
         pool.map(clc2.calc_square, itertools.repeat(8_000_000, NUM_PROCESSES))
-        print(pool.map(clc2.calc_square, [2,4,]))
+        print(f"pool map: {pool.map(clc2.calc_square, [2,4,])}")
         end_time = time.perf_counter()
+        print(end_time)
         print(f"Took: {end_time - start_time} seconds")
 
     processes: list = []
     clc1: Calculations = Calculations()
     for _ in range(NUM_PROCESSES):
         processes.append(Process(target=clc1.calc_square, args=[2]))
+    print(processes)
 
     start_time = time.perf_counter()
     for process in processes:
-        process.start()
+        print(f"start process: {process.start()}")
     for process in processes:
-        process.join()
+        print(f"end process: {process.join()}")
 
     end_time: float = time.perf_counter()
     print(f"Took: {end_time - start_time} seconds")

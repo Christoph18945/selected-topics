@@ -41,14 +41,13 @@ def debug(param_func):
         Returns:
             function: Return debugger function.
         """
-        args_values_types = [(a, type(a)) for a in args]
-        kwargs_values_types = [(k, v, type(v)) for k, v in kwargs.items()]
+        args_values_types: list = [(a, type(a)) for a in args]
+        kwargs_values_types: list = [(k, v, type(v)) for k, v in kwargs.items()]
         print(f"Args: {args_values_types}")
         print(f"Kwargs: {kwargs_values_types}")
         fn_result = param_func(*args, **kwargs)
         print(f"Function {param_func.__name__} returns: {fn_result}")
         return fn_result
-    
     return debugger
 
 @debug
@@ -61,7 +60,7 @@ def calculate_sum(val_a: int, val_b: int, res_c: int = None) -> int:
     Returns:
         int: Return the result.
     """
-    res = val_a + val_b if res_c else 0
+    res: int = val_a + val_b if res_c else 0
     return res
 
 if __name__ == "__main__":

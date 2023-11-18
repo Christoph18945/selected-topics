@@ -38,34 +38,34 @@ similar steps that differ only in the details. The base builder interface is use
 def main() -> None:
     """main function"""
     # without builde rmethod
-    sde = SDE()   # object for SDE
-    dsa = DSA()   # object for DSA
-    stl = STL()   # object for STL
+    sde: SDE = SDE()   # object for SDE
+    dsa: DSA = DSA()   # object for DSA
+    stl: STL = STL()   # object for STL
     print(f'Name of Course: {sde} and its Fee: {sde.fee}')
     print(f'Name of Course: {stl} and its Fee: {stl.fee}')
     print(f'Name of Course: {dsa} and its Fee: {dsa.fee}')
     # with builder method
-    dsa = DSA()  # object for DSA course
-    sde = SDE()  # object for SDE course
-    stl = STL()  # object for STL course
-    complex_course = construct_course(Complexcourse)
+    dsa: DSA = DSA()  # object for DSA course
+    sde: SDE = SDE()  # object for SDE course
+    stl: STL = STL()  # object for STL course
+    complex_course: Complexcourse = construct_course(Complexcourse)
     print(complex_course)
     return None
 
 class DSA():
     """Class for Data Structures and Algorithms"""
-    def Fee(self):
-        self.fee = 8000
+    def course_fee(self) -> int:
+        self.fee: int = 8000
  
-    def available_batches(self):
+    def available_batches(self) -> int:
         self.batches = 5
  
     def __str__(self):
         return "DSA"
- 
+
 class SDE():
     """Class for Software development Engineer"""
-    def Fee(self):
+    def course_fee(self):
         self.fee = 10000
  
     def available_batches(self):
@@ -76,7 +76,7 @@ class SDE():
  
 class STL():
     """class for Standard Template Library of C++"""
-    def Fee(self):
+    def course_fee(self):
         self.fee = 5000
  
     def available_batches(self):
@@ -86,11 +86,12 @@ class STL():
         return "STL"
 
 class Course:
+    """Course class"""
     def __init__(self):
-        self.Fee()
+        self.course_fee()
         self.available_batches()
  
-    def Fee(self):
+    def course_fee(self):
         raise NotImplementedError
  
     def available_batches(self):
@@ -101,7 +102,7 @@ class Course:
  
 class DSA(Course):
     """Class for Data Structures and Algorithms"""
-    def Fee(self):
+    def course_fee(self):
         self.fee = 8000
  
     def available_batches(self):
@@ -109,10 +110,10 @@ class DSA(Course):
  
     def __str__(self):
         return "DSA"
- 
+
 class SDE(Course):
     """Class for Software Development Engineer"""
-    def Fee(self):
+    def course_fee(self):
         self.fee = 10000
  
     def available_batches(self):
@@ -120,10 +121,10 @@ class SDE(Course):
  
     def __str__(self):
         return "SDE"
- 
+
 class STL(Course):
     """Class for Standard Template Library"""
-    def Fee(self):
+    def course(self):
         self.fee = 5000
  
     def available_batches(self):
@@ -137,7 +138,7 @@ class ComplexCourse:
         return 'Fee : {0.fee} | available_batches: {0.batches}'.format(self)
 
 class Complexcourse(ComplexCourse):
-    def Fee(self):
+    def course_fee(self):
         self.fee = 7000
  
     def available_batches(self):
@@ -147,7 +148,7 @@ def construct_course(cls):
     course = cls()
     course.Fee()
     course.available_batches()
-    return course    # return the course object
+    return course # return the course object
 
 if __name__ == "__main__":
     main()

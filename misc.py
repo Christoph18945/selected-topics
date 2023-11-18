@@ -23,7 +23,6 @@ def main() -> None:
     print("gcd(", a, ",", b, ") = ", gcd(a, b))
     print(fibonacci(9))
     print_pascal(7)
-
     nums = [-2,1,-3,7,-2,2,1,-5,4]
     ob1 = Solution()
     print(ob1.max_sub_array(nums)) 
@@ -172,8 +171,9 @@ def binomial_coeff(n, k):
     return res
 
 class Solution(object):
-   
+    """"""
     def __init__(self):
+        """class constructor"""
         ...
 
     def max_sub_array(self, nums):

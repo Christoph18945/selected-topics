@@ -9,9 +9,13 @@ are created without exposing the logic to the client, and for creating the new t
 same common interface.
  
 Problems we face without Factory Method:
-Imagine you are having your own startup which provides ridesharing in different parts of the country. The initial version of the app only provides Two-Wheeler ridesharing but as time passes, your app becomes popular and now you want to add Three and Four-Wheeler ridesharing also. 
-It's a piece of great news! but what about the software developers of your startup. They have to change the whole code because now most part of the code is coupled with the Two-Wheeler class and developers have to make changes to the entire codebase. 
-After being done with all these changes, either the developers end with the messy code or with the resignation letter.
+Imagine you are having your own startup which provides ridesharing in different parts of the country. The initial version of the
+app only provides Two-Wheeler ridesharing but as time passes, your app becomes popular and now you want to add Three and Four-Wheeler
+ridesharing also.
+
+It's a piece of great news! but what about the software developers of your startup. They have to change the whole code because now
+most part of the code is coupled with the Two-Wheeler class and developers have to make changes to the entire codebase. After being
+done with all these changes, either the developers end with the messy code or with the resignation letter.
 
 Its solution is to replace the straightforward object construction calls with calls to the special factory method. Actually,
 there will be no difference in the object creation but they are being called within the factory method.
@@ -30,69 +34,20 @@ For example Our Two_Wheeler, Three_Wheeler, and Four_wheeler classes should impl
 
 def main() -> None:
     """main function"""
-    # main method to call others
-    f = FrenchLocalizer()
-    e = EnglishLocalizer()
-    s = SpanishLocalizer()
- 
-    # list of strings
-    message = ["car", "bike", "cycle"]
- 
-    for msg in message:
-        print(f.localize(msg))
-        print(e.localize(msg))
-        print(s.localize(msg)) 
-
     f = Factory("French")
     e = Factory("English")
     s = Factory("Spanish")
- 
     message = ["car", "bike", "cycle"]
- 
     for msg in message:
         print(f.localize(msg))
         print(e.localize(msg))
         print(s.localize(msg))
-
-    return None  
-
-# Python Code for Object
-# Oriented Concepts without
-# using Factory method
+    return None
 
 class FrenchLocalizer:
     """ it simply returns the french version """
     def __init__(self):
-        self.translations = {"car": "voiture", "bike": "bicyclette",
-                             "cycle":"cyclette"}
-    def localize(self, msg):
-        """change the message using translations"""
-        return self.translations.get(msg, msg)
-
-class SpanishLocalizer:
-    """it simply returns the spanish version"""
-    def __init__(self):
-        self.translations = {"car": "coche", "bike": "bicicleta",
-                             "cycle":"ciclo"}
- 
-    def localize(self, msg):
-        """change the message using translations"""
-        return self.translations.get(msg, msg)
-
-class EnglishLocalizer:
-    """Simply return the same message"""
-    def localize(self, msg):
-        return msg
-
-# Python Code for factory method
-# it comes under the creational
-# Design Pattern
-
-class FrenchLocalizer:
-    """ it simply returns the french version """
-    def __init__(self):
-        self.translations = {"car": "voiture", "bike": "bicyclette",
-                             "cycle":"cyclette"}
+        self.translations = {"car": "voiture", "bike": "bicyclette", "cycle":"cyclette"}
  
     def localize(self, msg):
         """change the message using translations"""
@@ -101,8 +56,7 @@ class FrenchLocalizer:
 class SpanishLocalizer:
     """it simply returns the spanish version"""
     def __init__(self):
-        self.translations = {"car": "coche", "bike": "bicicleta",
-                             "cycle":"ciclo"}
+        self.translations = {"car": "coche", "bike": "bicicleta", "cycle":"ciclo"}
 
     def localize(self, msg):
         """change the message using translations"""

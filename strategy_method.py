@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-
 The strategy method is Behavioral Design pattern that allows you to define the complete family of algorithms, encapsulates each one and putting each of them into separate classes and also allows to interchange there objects. It is implemented in Python by dynamically replacing the content of a method defined inside a class with the contents of functions defined outside of the class. It enables selecting the algorithm at run-time. This method is also called as Policy Method.
- 
 
 Problem without using Strategy Method
 Imagine you created an application for the departmental store. Looks simple? Initially, there was one and only one type of discount called the On-Sale-Discount. So. everything was going with ease and there was no difficulty for maintaining such a simple application for a developer but as time passes, the owner of the departmental store demands for including some other types of discount also for the customers. It is very easy to say to make these changes but definitely not very easy to implement these changes in an efficient way.
@@ -35,7 +33,9 @@ Conquering Isolation: It is generally used to isolate the business logic of the 
 """
 
 # Solution using Strategy method
-# Let’s see how can we solve the above-described problem in an efficient way. We can create a specific class that will extract all the algorithms into separate classes called Strategy. Out actual class should store the reference to one of the strategy class.
+# Let’s see how can we solve the above-described problem in an efficient way. We can create a specific class that will
+# extract all the algorithms into separate classes called Strategy. Out actual class should store the reference to
+# one of the strategy class.
 
 def main() -> None:
     """main function"""
@@ -54,7 +54,7 @@ class Item:
         self.price = price
         self.discount_strategy = discount_strategy
 
-    def price_after_discount(self):
+    def price_after_discount(self) -> object:
         """A separate function for price after discount"""
         if self.discount_strategy:
             discount = self.discount_strategy(self)
@@ -62,16 +62,16 @@ class Item:
             discount = 0
         return self.price - discount
  
-    def __repr__(self):
+    def __repr__(self) -> str:
         """"""
         statement = "Price: {}, price after discount: {}"
         return statement.format(self.price, self.price_after_discount())
 
-def on_sale_discount(order):
+def on_sale_discount(order) -> float:
     """function dedicated to On Sale Discount"""
     return order.price * 0.25 + 20
 
-def twenty_percent_discount(order):
+def twenty_percent_discount(order) -> float:
     """function dedicated to 20 % discount"""
     return order.price * 0.20
 

@@ -41,39 +41,40 @@ def main() -> None:
     print("after :", after_gfg.render())
     return None
 
-# Problem Without Using Decorator Method
-# Imagine We are working with a formatting tool that provides features likes Bold the text and Underlines the text. But after some time, our formatting tools got famous among the targeted audience and on taking the feedback we got that our audience wants more features in the application such as making the text Italic and many other features. 
-# Looks Simple? It’s not the easy task to implement this or to extend our classes to add more functionalities without disturbing the existing client code because we have to maintain the Single Responsibility Principle.
-
 # Solution Using Decorator Method
-# Now let’s look at the solution that we have to avoid such conditions. Initially, we have only WrittenText but we have to apply filters like BOLD, ITALIC, UNDERLINE. So, we will create separate wrapper classes for each function like BoldWrapperClass, ItalicWrapperClass, and UnderlineWrapperclass.
+# Now let’s look at the solution that we have to avoid such conditions. Initially, we have only WrittenText
+# but we have to apply filters like BOLD, ITALIC, UNDERLINE. So, we will create separate wrapper classes for
+# each function like BoldWrapperClass, ItalicWrapperClass, and UnderlineWrapperclass.
 class WrittenText:
-    """Represents a Written text """
+    """Represents a Written text"""
     def __init__(self, text):
         self._text = text
  
     def render(self):
         return self._text
- 
+
 class UnderlineWrapper(WrittenText):
     """Wraps a tag in <u>"""
     def __init__(self, wrapped):
+        """class constructor"""
         self._wrapped = wrapped
  
     def render(self):
         return "<u>{}</u>".format(self._wrapped.render())
- 
+
 class ItalicWrapper(WrittenText):
     """Wraps a tag in <i>"""
     def __init__(self, wrapped):
+        """class constructor"""
         self._wrapped = wrapped
  
     def render(self):
         return "<i>{}</i>".format(self._wrapped.render())
- 
+
 class BoldWrapper(WrittenText):
     """Wraps a tag in <b>"""
     def __init__(self, wrapped):
+        """class constructor"""
         self._wrapped = wrapped
  
     def render(self):

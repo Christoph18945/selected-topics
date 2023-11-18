@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-"""
-Simulating the trash
+"""Simulating the trash
 
 Recycler
 The nature of this problem is that the trash is thrown unclassified into a

@@ -11,8 +11,6 @@
 """
 
 import random
-
-from func_attrib import grow_list
 from memory import Memory
 
 def main() -> None:

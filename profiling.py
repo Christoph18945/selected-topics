@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-"""profiling demonstration
-"""
+"""profiling demonstration"""
 
 import cProfile
 import pstats

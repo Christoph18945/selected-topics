@@ -37,7 +37,7 @@ Unspecified handlers: When you don't want to specify handlers in the code, it is
 
 def main() -> None:
     """main function"""
-    """Create a client object"""
+    # create a client object
     user = User()
     """Create requests to be processed"""
     string = "GeeksforGeeks"

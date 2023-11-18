@@ -48,12 +48,10 @@ def main() -> None:
 def get_text():
     """ method to get the text of file"""     
     return "plain_text"
- 
 
 def get_xml():
     """ method to get the xml version of file"""
     return "xml"
- 
 
 def get_pdf():
     """ method to get the pdf version of file"""
@@ -62,19 +60,17 @@ def get_pdf():
 def get_csv():
     """method to get the csv version of file"""
     return "csv"
- 
 
 def convert_to_text(data):
     """method used to convert the data into text format"""
     print("[CONVERT]")
     return "{} as text".format(data)
- 
 
 def saver():
     """method used to save the data"""
     print("[SAVE]")
 
-def template_function(getter, converter = False, to_save = False):
+def template_function(getter, converter = False, to_save = False) -> None:
     """elper function named as template_function"""
     # input data from getter
     data = getter()
@@ -84,11 +80,13 @@ def template_function(getter, converter = False, to_save = False):
         data = converter(data)
     else:
         print("Skip conversion")
+    
     # saves the data only if user want to save it
     if to_save:
         saver()
-    
     print("`{}` was processed".format(data))
+
+    return None
 
 if __name__ == "__main__":
     main()

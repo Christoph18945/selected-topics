@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-"""simple web server
-"""
+"""simple web server"""
 
 from datetime import datetime
 from bottle import route, run, template
@@ -14,8 +13,7 @@ def index(name='time'):
     return template('<b>Pi thinks the date/time is: {{t}}</b>', t=time)
 
 def main() -> None:
-    """main program
-    """
+    """main program"""
     index()
 
 if __name__ == "__main__":

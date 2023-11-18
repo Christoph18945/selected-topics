@@ -40,24 +40,20 @@ it can be done using the Adapter Method.
 def main() -> None:
     """main method"""
     objects = []
- 
     motorCycle = MotorCycle()
     objects.append(Adapter(motorCycle, wheels = motorCycle.TwoWheeler))
- 
     truck = Truck()
     objects.append(Adapter(truck, wheels = truck.EightWheeler))
- 
     car = Car()
     objects.append(Adapter(car, wheels = car.FourWheeler))
- 
     for obj in objects:
         print("A {0} is a {1} vehicle".format(obj.name, obj.wheels()))
-
     return None
 
 class MotorCycle:
     """Class for MotorCycle"""
-    def __init__(self):
+    def __init__(self) -> None:
+        """constructor"""
         self.name: str = "MotorCycle"
  
     def two_wheeler(self) -> str:
@@ -66,17 +62,20 @@ class MotorCycle:
 class Truck:
     """Class for Truck"""
     def __init__(self):
+        """constructor"""
         self.name: str = "Truck"
  
     def eight_wheeler(self) -> str:
         return "EightWheeler"
- 
+
 class Car:
-    """Class for Car"""
+    """Class Car"""
     def __init__(self):
+        """constructor"""
         self.name = "Car"
  
     def four_wheeler(self) -> str:
+        """return sort of car"""
         return "FourWheeler"
  
 class Adapter:
@@ -87,16 +86,16 @@ class Adapter:
     motorCycle = Adapter(motorCycle, wheels = motorCycle.TwoWheeler)
     """
     def __init__(self, obj: object, **adapted_methods: dict[str, object]):
-        """We set the adapted methods in the object's dict"""
+        """set adapted methods in object's dict"""
         self.obj = obj
         self.__dict__.update(adapted_methods)
  
     def __getattr__(self, attr: object) -> object:
-        """All non-adapted calls are passed to the object"""
+        """non-adapted calls passed to object"""
         return getattr(self.obj, attr)
  
     def original_dict(self) -> object:
-        """Print original object dict"""
+        """print original object dict"""
         return self.obj.__dict__
 
 if __name__ == "__main__":

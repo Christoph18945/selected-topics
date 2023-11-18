@@ -48,7 +48,6 @@ def main() -> None:
 
 class State:
     """State class: Base state Class. This is to share functionality"""
- 
     def scan(self):
         """Scan the dial to the next station"""
         self.pos += 1
@@ -59,7 +58,6 @@ class State:
 
 class AmState(State):
     """Separate Class for AM state of the radio"""
-    
     def __init__(self, radio):
         """constructor for AM state class"""
         self.radio = radio
@@ -80,8 +78,7 @@ class FmState(State):
         self.stations = ["81.3", "89.1", "103.9"]
         self.pos = 0
         self.name = "FM"
- 
-    
+
     def toggle_amfm(self):
         """method for toggling the state"""
         print("Switching to AM")

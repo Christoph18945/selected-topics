@@ -1,6 +1,8 @@
 ## :newspaper: About the project
 
-This project deals with various Python topics that the author considered worth mentioning. The aim is to take a closer look at certain concepts of the language, as well as to shed more light on corresponding topics.
+This project deals with various Python topics that the author considered worth mentioning. The goal is to take a closer look at certain concepts of the language, as well as to shed more light on corresponding topics.
+
+_Subjects:_ design patterns, search algorithms, logging, decorators, memory addresses, profiling, special parameters, complexities (time, auxilary space), trees, algorithms, guidelines, callbacks
 
 ## :hammer: Built with
 

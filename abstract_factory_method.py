@@ -43,17 +43,19 @@ def main() -> None:
     print(f'Name of the course is {dsa} and its price is {dsa.get_price()}')
     print(f'Name of the course is {stl} and its price is {stl.get_price()}')
     # solution with factory method
-    course = Course_At_GFG(random_course) 
+    course: Course_At_GFG = Course_At_GFG(random_course) 
     for i in range(5):
         course.show_course()
     return None
 
 class DataStructureAlgorithm:
-    """ Class for Data Structure and Algorithms """
+    """ Class DataStructureAlgorithm"""
     def get_price(self) -> str:
+        """get price"""
         return 11000
  
     def __str__(self) -> str:
+        """human-readable string"""
         return "DSA"
  
 class StandardTemplateLibrary:
@@ -96,27 +98,33 @@ class Course_At_GFG:
         return None
 
 class DSA:
-    """Class for Data Structure and Algorithms"""
+    """Class DSA"""
     def get_fee(self) -> str:
+        """return fee for class"""
         return 11000
  
     def __str__(self) -> str:
+        """human readable str"""
         return "DSA"
 
 class STL:
-    """Class for Standard Template Library"""
+    """Class Standard Template Library"""
     def get_fee(self) -> str:
+        """return fee for class"""
         return 8000
  
     def __str__(self) -> str:
+        """human-readable str"""
         return "STL"
  
 class SDE:
     """Class for Software Development Engineer"""
     def get_fee(self) -> int:
+        """get fee of class"""
         return 15000
  
     def __str__(self) -> str:
+        """human readable str"""
         return 'SDE'
  
 def random_course() -> object:

@@ -43,8 +43,6 @@ Division into layers: It is used when we want to provide a unique structure to a
 # To solve the above-described problem, we would like to hire the Facade Method. It will help us to hide or abstract the complexities
 # of the subsystems as follows. 
 
-"""Facade pattern with an example of WashingMachine"""
-
 def main() -> None:
     """main function"""
     washingMachine = WashingMachine()

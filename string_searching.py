@@ -55,7 +55,6 @@ def rabin_karp(pat, txt, q):
     p = 0    # hash value for pattern
     t = 0    # hash value for txt
     h = 1
- 
     # The value of h would be "pow(d, M-1)% q"
     for i in range(M-1):
         h = (h * d)% q

@@ -3,7 +3,7 @@
 
 """Singleton Method
 
-Singleton Method is a type of Creational Design pattern and is one of the simplest design patterns00 available to us.
+Singleton Method is a type of Creational Design pattern and is one of the simplest design patterns available to us.
 It is a way to provide one and only one object of a particular type. It involves only one class to create methods and specify the objects. 
 Singleton Design Pattern can be understood by a very simple example of Database connectivity. When each object creates a unique Database
 Connection to the Database, it will highly affect the cost and expenses of the project. So, it is always better to make a single connection
@@ -18,6 +18,57 @@ rather than making extra irrelevant connections which can be easily done by Sing
 .. _Original source:
     https://www.geeksforgeeks.org/python-design-patterns/
 """
+
+import threading
+
+def main() -> None:
+    """main function"""
+    # create object of Singleton Class
+    obj = Singleton()
+    print(obj)
+ 
+    # pick the instance of the class
+    obj = Singleton.getInstance()
+    print(obj)
+
+    person1 = Borg()    # object of class Borg
+    person2 = Borg()    # object of class Borg
+    person3 = Borg()    # object of class Borg
+ 
+    person1.state = 'DataStructures'  # person1 changed the state
+    person2.state = 'Algorithms'     # person2 changed the state
+ 
+    print(person1)    # output --> Algorithms
+    print(person2)    # output --> Algorithms
+ 
+    person3.state = 'Geeks'  # person3 changed the
+    # the shared state
+ 
+    print(person1)    # output --> Geeks
+    print(person2)    # output --> Geeks
+    print(person3)    # output --> Geeks
+
+    # create class X
+    class X(SingletonDoubleChecked):
+        pass
+ 
+    # create class Y
+    class Y(SingletonDoubleChecked):
+        pass
+ 
+    A1, A2 = X.instance(), X.instance()
+    B1, B2 = Y.instance(), Y.instance()
+ 
+    assert A1 is not B1
+    assert A1 is A2
+    assert B1 is B2
+ 
+    print('A1 : ', A1)
+    print('A2 : ', A2)
+    print('B1 : ', B1)
+    print('B2 : ', B2)
+
+    return None    
 
 class OnlyOne:
     """
@@ -69,7 +120,6 @@ class Borg:
         self.__dict__ = self._shared_state
 
 class Singleton(Borg):
-    
     def __init__(self, arg):
         Borg.__init__(self)
         self.val = arg
@@ -82,7 +132,7 @@ class SingletonDecorator:
     and using metaclasses. The first approach could be thought of as a class
     decorator (decorators will be defined later in the book), because it takes
     the class of interest and adds functionality to it by wrapping it in another
-    class: 
+    class:
     """
     def __init__(self,klass):
         self.klass = klass
@@ -98,20 +148,17 @@ class SingletonMetaClass(type):
     The second approach uses metaclasses, a topic I do not yet understand but
     which looks very interesting and powerful indeed (note that Python 2.2
     has improved/simplified the metaclass syntax, and so this example may
-    change): 
+    change):
     """
     def __init__(cls,name,bases,dict):
         super(SingletonMetaClass,cls)\
         .__init__(name,bases,dict)
-
         original_new = cls.__new__
-        
         def my_new(cls,*args,**kwds):
             if cls.instance == None:
                 cls.instance = \
                 original_new(cls,*args,**kwds)
             return cls.instance
-
         cls.instance = None
         cls.__new__ = staticmethod(my_new)
 
@@ -128,39 +175,26 @@ class bar(object):
 class Borg:
     # state shared by each instance
     __shared_state = dict()
- 
     # constructor method
     def __init__(self):
- 
         self.__dict__ = self.__shared_state
         self.state = 'GeeksforGeeks'
- 
     def __str__(self):
- 
         return self.state
 
-# Double Checked Locking singleton pattern
-import threading
- 
- 
 class SingletonDoubleChecked(object):
- 
     # resources shared by each and every
     # instance
- 
     __singleton_lock = threading.Lock()
     __singleton_instance = None
- 
     # define the classmethod
     @classmethod
     def instance(cls):
- 
         # check for the singleton instance
         if not cls.__singleton_instance:
             with cls.__singleton_lock:
                 if not cls.__singleton_instance:
                     cls.__singleton_instance = cls()
- 
         # return the singleton instance
         return cls.__singleton_instance
 
@@ -170,9 +204,7 @@ class SingletonDoubleChecked(object):
 # method which has the ability to return the shared resource. We also make use of the so-called Virtual private
 # Constructor to raise the exception against it although it is not much required.
 class Singleton:
- 
     __shared_instance = 'GeeksforGeeks'
- 
     @staticmethod
     def getInstance():
         """Static Access Method"""
@@ -187,50 +219,5 @@ class Singleton:
         else:
             Singleton.__shared_instance = self
 
-# main method
 if __name__ == "__main__":
- 
-    # create object of Singleton Class
-    obj = Singleton()
-    print(obj)
- 
-    # pick the instance of the class
-    obj = Singleton.getInstance()
-    print(obj)
-
-    person1 = Borg()    # object of class Borg
-    person2 = Borg()    # object of class Borg
-    person3 = Borg()    # object of class Borg
- 
-    person1.state = 'DataStructures'  # person1 changed the state
-    person2.state = 'Algorithms'     # person2 changed the state
- 
-    print(person1)    # output --> Algorithms
-    print(person2)    # output --> Algorithms
- 
-    person3.state = 'Geeks'  # person3 changed the
-    # the shared state
- 
-    print(person1)    # output --> Geeks
-    print(person2)    # output --> Geeks
-    print(person3)    # output --> Geeks
-
-    # create class X
-    class X(SingletonDoubleChecked):
-        pass
- 
-    # create class Y
-    class Y(SingletonDoubleChecked):
-        pass
- 
-    A1, A2 = X.instance(), X.instance()
-    B1, B2 = Y.instance(), Y.instance()
- 
-    assert A1 is not B1
-    assert A1 is A2
-    assert B1 is B2
- 
-    print('A1 : ', A1)
-    print('A2 : ', A2)
-    print('B1 : ', B1)
-    print('B2 : ', B2)
+    main()

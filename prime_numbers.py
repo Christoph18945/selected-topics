@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-"""prime numbers
-"""
+"""prime numbers"""
 
 from math import floor, sqrt
 
@@ -22,10 +21,7 @@ def main() -> None:
     return None
 
 def sieve_or_erasthostanes(num):
-    """
-    Python program to print all Primes Smaller
-    than or equal to N using Sieve of Eratosthenes    
-    """
+    """Print all Primes Smaller than or equal to N using Sieve of Eratosthenes"""
     prime = [True for i in range(num+1)]
     # boolean array
     p = 2
@@ -33,7 +29,6 @@ def sieve_or_erasthostanes(num):
         # If prime[p] is not
         # changed, then it is a prime
         if (prime[p] == True):
- 
             # Updating all multiples of p
             for i in range(p * p, num+1, p):
                 prime[i] = False
@@ -43,8 +38,8 @@ def sieve_or_erasthostanes(num):
         if prime[p]:
             print(p)
 
-# returns True if prime, False otherwise
 def is_prime(number) -> bool:
+    """return true if number is prime, otherwise false"""
     # 1 is a special case of not prime
     if number <= 1:
         return False
@@ -65,8 +60,8 @@ def is_prime(number) -> bool:
     # number is probably prime
     return True
 
-# check if a series of numbers are prime or not
 def check_numbers_are_prime(numbers) -> None:
+    """chekc if a series of numbers are prime or not"""
     # check each number in turn
     for number in numbers:
         if is_prime(number):

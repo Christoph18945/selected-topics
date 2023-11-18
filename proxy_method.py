@@ -49,7 +49,7 @@ Smart proxy: It is used to provide the additional security to the application by
 # We will simply get our needed data using the proxy without wasting a huge amount of memory for the creation of the object.
 
 def main():
-    # Instantiate the Proxy
+    """main function"""
     collegeProxy = CollegeProxy()
     # Client attempting to study in the college at the default balance of 1000.
     # Logically, since he / she cannot study with such balance,
@@ -61,17 +61,17 @@ def main():
     collegeProxy.studyingInCollege()
 
 class College:
-    '''Resource-intensive object'''
+    """Resource-intensive object"""
     def studyingInCollege(self):
         print("Studying In College....")
 
 class CollegeProxy:
-    '''Relatively less resource-intensive proxy acting as middleman.
-     Instantiates a College object only if there is no fee due.'''
+    """Relatively less resource-intensive proxy acting as middleman.
+    Instantiates a College object only if there is no fee due."""
     def __init__(self):
         self.feeBalance = 1000
         self.college = None
-  
+
     def studyingInCollege(self):
         print("Proxy in action. Checking to see if the balance of student is clear or not...")
         if self.feeBalance <= 500:
@@ -79,7 +79,6 @@ class CollegeProxy:
             self.college = College()
             self.college.studyingInCollege()
         else:
-  
             # Otherwise, don't instantiate the college object.
             print("Your fee balance is greater than 500, first pay the fee")
 
