@@ -24,12 +24,12 @@ def main() -> None:
     print(memory_1.get_mem_addr(val1))
     print(memory_1.get_mem_addr(val2))
     print(memory_1.get_mem_addr(val3))
-    val1: float = 42.0
-    val2: float = 42.0
-    val3: float = 42.0
-    print(memory_1.get_mem_addr(val1))
-    print(memory_1.get_mem_addr(val2))
-    print(memory_1.get_mem_addr(val3))
+    fval1: float = 42.0
+    fval2: float = 42.0
+    fval3: float = 42.0
+    print(memory_1.get_mem_addr(int(fval1)))
+    print(memory_1.get_mem_addr(int(fval2)))
+    print(memory_1.get_mem_addr(int(fval3)))
     bool1: bool = True
     bool2: bool = True
     print(memory_1.get_mem_addr(bool1))
@@ -40,12 +40,12 @@ def main() -> None:
     print(memory_1.get_mem_addr(bool4))
     none1: None = None
     none2: None = None
-    print(memory_1.get_mem_addr(none1))
-    print(memory_1.get_mem_addr(none2))
+    # print(memory_1.get_mem_addr(none1)) # int expected
+    # print(memory_1.get_mem_addr(none2)) # int expected
     list1: list = [1,2,3,4,5,6,7,8,9,10]
     list2: list = list1
-    print(memory_1.get_mem_addr(list1))
-    print(memory_1.get_mem_addr(list2))
+    # print(memory_1.get_mem_addr(list1))
+    # print(memory_1.get_mem_addr(list2))
     list3: list = [1,2,3,4,5]
     list4: list = list3
     list5: list = list3

@@ -39,14 +39,15 @@ def timing(function):
     return timer
 
 @timing
-def test_addition() -> int:
+def test_addition() -> Vector2D | None:
     """test addition"""
     for _ in range(100):
         vector_1 = Vector2D(random.randint(-10, 10), random.randint(-10, 10))
         vector_2 = Vector2D(random.randint(-10, 10), random.randint(-10, 10))
         class_3 = vector_1 + vector_2
         return class_3
+    return None
 
 def test_addition_std_lib() -> None:
     """test addition standard lib"""
-    ...
+    return None

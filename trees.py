@@ -4,6 +4,9 @@
 """Examples for tree traversals
 """
 
+from typing import Any
+
+
 def main() -> None:
     """main function"""
     # modules/trees.py
@@ -34,7 +37,7 @@ def main() -> None:
     print("LCA(2, 4) = %d" % (findLCA(root, 2, 4))) 
 
     # find k-smallest element in BST (order statics in BST)
-    root = None
+    # root = None
     keys = [20, 8, 22, 4, 12, 10, 14]
  
     for x in keys:
@@ -69,13 +72,13 @@ def print_in_order(root):
 # -----------------------------------------------------------
 # O(n) solution to find LCS of two given values n1 and n2
 
-class Node:
-    """A binary tree node."""
-    # Constructor to create a new binary node
-    def __init__(self, key):
-        self.key = key
-        self.left = None
-        self.right = None
+# class Node:
+#    """A binary tree node."""
+#    # Constructor to create a new binary node
+#    def __init__(self, key):
+#        self.key = key
+#        self.left = None
+#        self.right = None
  
 # Finds the path from root node to given root of the tree.
 # Stores the path in a list path[], returns true if path
@@ -130,11 +133,11 @@ def findLCA(root, n1, n2):
 # program to find k-th smallest element
 # in a BST.
 # A BST node
-class Node:
-    def __init__(self, key):
-        self.data = key
-        self.left = None
-        self.right = None
+#class Node:
+#    def __init__(self, key):
+#        self.data = key
+#        self.left = None
+#        self.right = None
  
 # Recursive function to insert an key into BST
 def insert(root, x):

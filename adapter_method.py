@@ -41,13 +41,13 @@ def main() -> None:
     """main method"""
     objects = []
     motorCycle = MotorCycle()
-    objects.append(Adapter(motorCycle, wheels = motorCycle.TwoWheeler))
+    objects.append(Adapter(motorCycle, wheels = motorCycle.two_wheeler))
     truck = Truck()
-    objects.append(Adapter(truck, wheels = truck.EightWheeler))
+    objects.append(Adapter(truck, wheels = truck.eight_wheeler))
     car = Car()
-    objects.append(Adapter(car, wheels = car.FourWheeler))
+    objects.append(Adapter(car, wheels = car.four_wheeler))
     for obj in objects:
-        print("A {0} is a {1} vehicle".format(obj.name, obj.wheels()))
+        print("A {0} is a {1} vehicle".format(obj.name, obj.wheels))
     return None
 
 class MotorCycle:
@@ -57,6 +57,7 @@ class MotorCycle:
         self.name: str = "MotorCycle"
  
     def two_wheeler(self) -> str:
+        """Return TwoWheeler string."""
         return "TwoWheeler"
 
 class Truck:
@@ -66,6 +67,7 @@ class Truck:
         self.name: str = "Truck"
  
     def eight_wheeler(self) -> str:
+        """Return eightWheeler string."""
         return "EightWheeler"
 
 class Car:
@@ -85,12 +87,12 @@ class Adapter:
     motorCycle = MotorCycle()
     motorCycle = Adapter(motorCycle, wheels = motorCycle.TwoWheeler)
     """
-    def __init__(self, obj: object, **adapted_methods: dict[str, object]):
+    def __init__(self, obj, **adapted_methods):
         """set adapted methods in object's dict"""
         self.obj = obj
         self.__dict__.update(adapted_methods)
  
-    def __getattr__(self, attr: object) -> object:
+    def __getattr__(self, attr) -> object:
         """non-adapted calls passed to object"""
         return getattr(self.obj, attr)
  

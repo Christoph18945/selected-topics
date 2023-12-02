@@ -31,7 +31,7 @@ def main():
     for _ in range(3):
         print(divide_integers(10, 0))
 
-def divide_integers(val_a: int, val_b: int) -> float:
+def divide_integers(val_a: int, val_b: int) -> float | None:
     """divide integers"""
     try:
         logger.debug(f"a={val_a}, b={val_b}")
@@ -39,6 +39,7 @@ def divide_integers(val_a: int, val_b: int) -> float:
         return result
     except Exception as e:
         logger.exception(f"Exception was raised: {e}")
+        return None
 
 if __name__ == "__main__":
     main()

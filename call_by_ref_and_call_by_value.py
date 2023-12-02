@@ -61,7 +61,7 @@ def call_by_reference(my_list: list) -> list:
     """
     my_list.append([50,60,70])
     print(f"Inside {call_by_reference.__name__} function: {my_list}")
-    return list
+    return my_list
 
 if __name__ == "__main__":
     main()

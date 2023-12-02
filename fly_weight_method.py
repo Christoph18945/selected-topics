@@ -44,6 +44,8 @@ Project Cost Reduction: When it is required to reduce the cost of project in ter
     https://www.geeksforgeeks.org/python-design-patterns/
 """
 
+from typing import Dict, Any
+
 def main() -> None:
     """main function"""
     car_data = (('a', 1, 'Audi'), ('a', 2, 'Ferrari'), ('b', 1, 'Audi'))
@@ -54,9 +56,9 @@ def main() -> None:
         car_family_objects.append(obj)
  
     """similar id's says that they are same objects"""
-    for i in car_family_objects:
-        print("id = " + str(id(i)))
-        print(i.get_car_info())
+    # for i in car_family_objects:
+    #    print("id = " + str(id(i)))
+    #    print(i.get_car_info())
 
     return None
 
@@ -76,9 +78,9 @@ class ComplexCars(object):
     def cars(self, car_name):
         return "ComplexPattern[% s]" % (car_name)
 
-class CarFamilies(object):
+class CarFamilies():
     """dictionary to store ids of the car"""
-    car_family = {}
+    car_family: Dict[Any, Any] = {}
     def __new__(cls, name, car_family_id):
         try:
             id = cls.car_family[car_family_id]

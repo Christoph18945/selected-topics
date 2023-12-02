@@ -20,7 +20,7 @@ def main() -> None:
     print(grow_list.__code__.co_varnames) # return all paramter names
     return None
 
-def grow_list(val: None = None, my_list: list = None) -> list:
+def grow_list(val: None = None, my_list: list = []) -> list:
     """Appending values to a list.
 
     Args:

@@ -104,6 +104,7 @@ def fibonacci(n: int) -> int:
     # print incorrect input
     if n < 0:
         print("Incorrect input")
+        return 0
  
     # Check if n is 0
     # then it will return 0

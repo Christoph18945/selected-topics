@@ -51,7 +51,7 @@ def debug(param_func):
     return debugger
 
 @debug
-def calculate_sum(val_a: int, val_b: int, res_c: int = None) -> int:
+def calculate_sum(val_a: int, val_b: int, res_c: int = 0) -> int:
     """Calculate the sum of 3 values.
 
     Args:

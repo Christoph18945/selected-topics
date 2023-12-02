@@ -44,7 +44,7 @@ class Trash:
         return self.weight
  
     # Sums the value of Trash in a bin:
-    def suzm_value(iterator):
+    def sum_value(iterator):
         val = 0.0
         it: Trash = Trash()
         while(it.next()):
@@ -78,8 +78,10 @@ class Paper(Trash):
     def get_value(self):
         return self.val
         
-    def set_value(new_val: float):
+    def set_value(self, new_val: float) -> float:
+        """Set a value."""
         new_valval = new_val
+        return new_valval
 
 class Glass(Trash):
     """Class Glass"""
@@ -89,8 +91,10 @@ class Glass(Trash):
     def get_value(self):
         return self.val
         
-    def set_value(new_val: float):
+    def set_value(self, new_val: float) -> float:
+        """Set a specific value."""
         new_valval = new_val
+        return new_valval
 
 class RecycleA(unittest.main):
     """Class RecycleA"""
@@ -111,6 +115,7 @@ class RecycleA(unittest.main):
                 case 2 :
                     bin.append(Glass(random() * 100))
     def test(self):
+        """Testing"""
         sorter: Iterator = bin.iterator()
         # Sort the Trash:
         while(sorter.hasNext()):
@@ -129,10 +134,10 @@ class RecycleA(unittest.main):
             if t is True:
                 self.glassBin.append(t)
             
-            Trash.sumValue(self.alBin.iterator())
-            Trash.sumValue(self.paperBin.iterator())
-            Trash.sumValue(self.glassBin.iterator())
-            Trash.sumValue(self.bin.iterator())
+            Trash.sum_value(self.alBin.iterator())
+            Trash.sum_value(self.paperBin.iterator())
+            Trash.sum_value(self.glassBin.iterator())
+            Trash.sum_value(self.bin.iterator())
 
 if __name__ == "__main__":
     main()

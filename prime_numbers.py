@@ -4,6 +4,7 @@
 """prime numbers"""
 
 from math import floor, sqrt
+from typing import Any
 
 def main() -> None:
     """main function"""
@@ -13,7 +14,7 @@ def main() -> None:
     print(sieve_or_erasthostanes(num))
     print(is_prime(4))
     print(check_numbers_are_prime([1,2,3,4,5,6,7,8,9]))
-    NUMBERS = [17977, 10619863, 106198, 6620830889, 80630964769, 228204732751,
+    NUMBERS: list[int] = [17977, 10619863, 106198, 6620830889, 80630964769, 228204732751,
     1171432692373, 1398341745571, 10963707205259, 15285151248481,
     99999199999, 304250263527209, 30425026352720, 10657331232548839,
     10657331232548830,  44560482149, 1746860020068409]
@@ -60,13 +61,15 @@ def is_prime(number) -> bool:
     # number is probably prime
     return True
 
-def check_numbers_are_prime(numbers) -> None:
+def check_numbers_are_prime(numbers) -> Any:
     """chekc if a series of numbers are prime or not"""
     # check each number in turn
     for number in numbers:
         if is_prime(number):
             print(f'{number} is prime')
-    return None
+            return number
+        else:
+            return None
 
 if __name__ == "__main__":
     main()

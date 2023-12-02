@@ -3,6 +3,9 @@
 
 """callback example"""
 
+from typing import Any
+
+
 def main() -> None:
     """main function"""
     num: tuple = (8, 5)
@@ -10,11 +13,11 @@ def main() -> None:
     print("Multiplication =", ans)
     return None
 
-def called(n: int) -> int:
+def called(n: tuple) -> int:
     """called function"""
     return n[0]*n[1]
 
-def caller(func: object, n: object) -> object:
+def caller(func: Any, n: object) -> object:
     """caller function"""
     return func(n)
 

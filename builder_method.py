@@ -45,9 +45,9 @@ def main() -> None:
     print(f'Name of Course: {stl} and its Fee: {stl.fee}')
     print(f'Name of Course: {dsa} and its Fee: {dsa.fee}')
     # with builder method
-    dsa: DSA = DSA()  # object for DSA course
-    sde: SDE = SDE()  # object for SDE course
-    stl: STL = STL()  # object for STL course
+    dsa = DSA()  # object for DSA course
+    sde = SDE()  # object for SDE course
+    stl = STL()  # object for STL course
     complex_course: Complexcourse = construct_course(Complexcourse)
     print(complex_course)
     return None
@@ -55,10 +55,14 @@ def main() -> None:
 class DSA():
     """Class for Data Structures and Algorithms"""
     def course_fee(self) -> int:
+        """Return the course fee as integer."""
         self.fee: int = 8000
+        return self.fee
  
     def available_batches(self) -> int:
+        """Return number of available batches."""
         self.batches = 5
+        return self.batches
  
     def __str__(self):
         return "DSA"
@@ -99,39 +103,6 @@ class Course:
  
     def __repr__(self):
         return 'Fee : {0.fee} | Batches Available : {0.batches}'.format(self)
- 
-class DSA(Course):
-    """Class for Data Structures and Algorithms"""
-    def course_fee(self):
-        self.fee = 8000
- 
-    def available_batches(self):
-        self.batches = 5
- 
-    def __str__(self):
-        return "DSA"
-
-class SDE(Course):
-    """Class for Software Development Engineer"""
-    def course_fee(self):
-        self.fee = 10000
- 
-    def available_batches(self):
-        self.batches = 4
- 
-    def __str__(self):
-        return "SDE"
-
-class STL(Course):
-    """Class for Standard Template Library"""
-    def course(self):
-        self.fee = 5000
- 
-    def available_batches(self):
-        self.batches = 7
- 
-    def __str__(self):
-        return "STL"
 
 class ComplexCourse:
     def __repr__(self):

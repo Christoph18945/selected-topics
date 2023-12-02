@@ -22,7 +22,7 @@ def main() -> None:
     print(travelling_salesman_problem(graph, s))
     return None
 
-def travelling_salesman_problem(graph: list[list], s: int):
+def travelling_salesman_problem(graph, s):
     """Implementation of traveling Salesman Problem.
 
     Args:

@@ -22,13 +22,13 @@ def main() -> None:
     # 0x1c0b01b0d50
     # print(mem_1.get_mem_addr(my_int_val_2))
     # 0x1c0b01b0d50
-    my_int_val_1: int = 1000
-    my_int_val_2: int = 1000
+    my_int_val_1 = 1000
+    my_int_val_2 = 1000
     print(mem_1.get_mem_addr(my_int_val_1))
     # 0x1c0b2bb5e30
     print(mem_1.get_mem_addr(my_int_val_2))
     # 0x1c0b2bb5e30
-    my_list1 = []
+    my_list1: list = []
     print(random.seed(42))
     # None
     append_random_value(my_list1)

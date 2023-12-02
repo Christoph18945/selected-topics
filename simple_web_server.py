@@ -7,7 +7,8 @@ from datetime import datetime
 from bottle import route, run, template
 
 @route('/')
-def index(name='time'):
+def index():
+    """index"""
     dt = datetime.now()
     time = "{:%Y-%m-%d %H:%M:%S}".format(dt)
     return template('<b>Pi thinks the date/time is: {{t}}</b>', t=time)

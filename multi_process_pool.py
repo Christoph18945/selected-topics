@@ -40,7 +40,7 @@ def main() -> None:
     for process in processes:
         print(f"end process: {process.join()}")
 
-    end_time: float = time.perf_counter()
+    end_time = time.perf_counter()
     print(f"Took: {end_time - start_time} seconds")
     return None
 

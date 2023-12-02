@@ -43,14 +43,14 @@ def main() -> None:
     print(f'Name of the course is {dsa} and its price is {dsa.get_price()}')
     print(f'Name of the course is {stl} and its price is {stl.get_price()}')
     # solution with factory method
-    course: Course_At_GFG = Course_At_GFG(random_course) 
+    course: Course_At_GFG = Course_At_GFG(random_course)
     for i in range(5):
         course.show_course()
     return None
 
 class DataStructureAlgorithm:
     """ Class DataStructureAlgorithm"""
-    def get_price(self) -> str:
+    def get_price(self) -> int:
         """get price"""
         return 11000
  
@@ -60,7 +60,7 @@ class DataStructureAlgorithm:
  
 class StandardTemplateLibrary:
     """Class for Standard Template Library"""
-    def get_price(self) -> str:
+    def get_price(self) -> int:
         return 8000
  
     def __str__(self) -> str:
@@ -68,7 +68,7 @@ class StandardTemplateLibrary:
  
 class SoftwareDevelopmentEngineer:
     """Class for Software Development Engineer"""
-    def get_price(self)-> str:
+    def get_price(self)-> int:
         return 15000
  
     def __str__(self) -> str:
@@ -99,7 +99,7 @@ class Course_At_GFG:
 
 class DSA:
     """Class DSA"""
-    def get_fee(self) -> str:
+    def get_fee(self) -> int:
         """return fee for class"""
         return 11000
  
@@ -109,14 +109,14 @@ class DSA:
 
 class STL:
     """Class Standard Template Library"""
-    def get_fee(self) -> str:
+    def get_fee(self) -> int:
         """return fee for class"""
         return 8000
- 
+
     def __str__(self) -> str:
         """human-readable str"""
         return "STL"
- 
+
 class SDE:
     """Class for Software Development Engineer"""
     def get_fee(self) -> int:
@@ -126,11 +126,11 @@ class SDE:
     def __str__(self) -> str:
         """human readable str"""
         return 'SDE'
- 
-def random_course() -> object:
+
+def random_course() -> (object | (SDE | STL | DSA)):
     """A random class for choosing the course"""
-    object: SDE | STL | DSA = random.choice([SDE, STL, DSA])()
-    return object
+    crs: object = random.choice([SDE, STL, DSA])()
+    return crs
 
 if __name__ == "__main__":
     main()
